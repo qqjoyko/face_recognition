@@ -68,8 +68,8 @@ def makedir_exist_ok(dirpath):
 
 
 def save_face(image, tag, num):
-  # DATA_TRAIN为抓取的人脸存放目录，如果目录不存在则创建
+  # create directory
     makedir_exist_ok(os.path.join(training_set, str(tag)))
     img_name = os.path.join(training_set, str(tag), '{}_{}.jpg'.format(int(time.time()), num))
-    # 保存人脸图像到指定的位置, 其中会创建一个tag对应的目录，用于后面的分类训练
+    # save in tag
     cv2.imwrite(img_name, image)
